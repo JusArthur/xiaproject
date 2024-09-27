@@ -1,2 +1,1 @@
-# gym-app-landingpage
- SvelteKit & TailwindCSS Landing Page
+SvelteKit & TailwindCSS Landing Page
