@@ -1,73 +1,29 @@
 <script>
     import ReviewCard from "./ReviewCard.svelte";
     import SectionWrapper from "./SectionWrapper.svelte";
-    import Stars from "./Stars.svelte";
 
     let lim = true;
 
     let reviewsList = [
         {
-            name: "John Doe",
-            review: "Swoley Moley has been a game-changer for my fitness journey! The personalized workout plans and progress tracking tools are amazing, and the community keeps me motivated. I especially love the feature that recommends new workouts based on my goals and strengths.",
-            features: [
-                "Personalized workout plans",
-                "Community features",
-                "Workout recommendation system",
-            ],
+            time: "2015-06",
+            review: "Despite having only 10 yuan (two Canadian dollars) as daily pocket money, I still managed to buy 'the beginner’s guide to Java'. And with that, I typed out my very first 'Hello, World.'",
         },
         {
-            name: "Jane Smith",
-            review: "Swoley Moley is the most user-friendly fitness app I've ever used. The interface is clean and intuitive, and the exercises are easy to follow. I've already seen significant results in just a few weeks. My favorite features are the guided workouts and the ability to log my meals and track my progress.",
-            features: [
-                "Guided workouts",
-                "Meal logging and tracking",
-                "User-friendly interface",
-            ],
+            time: "2022-07",
+            review: "After surviving both the high school and college entrance exams, I finally had some time to dive into programming books again. Although I had forgotten much of Java, I still named a file in Python as 'Java_is_the_best_language.py.'",
         },
         {
-            name: "Michael Brown",
-            review: "Swoley Moley is the best investment I've made in my health. It's helped me build muscle, lose weight, and improve my overall fitness level. The variety of workout routines and challenges keeps me engaged, and the nutrition tips are super helpful. I highly recommend this app to anyone looking to get in shape!",
-            features: [
-                "Variety of workout routines and challenges",
-                "Nutrition tips",
-                "Progress tracking and challenges",
-            ],
+            time: "2023-01",
+            review: "Even though I had just started learning frontend development, I couldn’t wait to build my own website. Now, looking at it, it's absolutely dreadful. My favorite video creator once said, If you think your past self was foolish, it means you're making progress.",
         },
         {
-            name: "Sarah Williams",
-            review: "I'm a busy mom of two, and Swoley Moley has been a lifesaver! It helps me fit in quick and effective workouts even when I'm short on time. I love the timer feature that keeps me on track, and the workout variety ensures I never get bored.",
-            features: [
-                "Quick and effective workouts",
-                "Timer feature",
-                "Variety of workouts",
-            ],
+            time: "2023-06",
+            review: "I joined my school's ACM (ICPC) team, and even though I'm just a member of the reserve squad, I was so excited that I told everyone who passed by. In return, they all looked at me as if I had lost my mind.",
         },
         {
-            name: "David Lee",
-            review: "As a seasoned athlete, I was skeptical about any fitness app. But Swoley Moley has surprised me! It offers advanced workout programs and allows me to customize my routines to fit my specific needs. The data analysis is fantastic, helping me track my progress and optimize my performance.",
-            features: [
-                "Advanced workout programs",
-                "Customization options",
-                "Detailed data analysis",
-            ],
-        },
-        {
-            name: "Ashley Johnson",
-            review: "Swoley Moley has helped me overcome my fear of going to the gym. The encouraging community and supportive environment have made me feel comfortable and confident. I love the social features that allow me to connect with other fitness enthusiasts and share my progress.",
-            features: [
-                "Supportive community",
-                "Social features",
-                "Encouraging environment",
-            ],
-        },
-        {
-            name: "Mark Robinson",
-            review: "Swoley Moley is more than just a fitness app; it's a lifestyle change. It's helped me develop healthy habits and make better choices about my diet and exercise. I'm incredibly grateful for this app and the positive impact it's had on my life.",
-            features: [
-                "Focus on healthy habits",
-                "Nutritional guidance",
-                "Positive lifestyle impact",
-            ],
+            time: "2024-04",
+            review: "My first national award, together with my brothers. All I remember from that day is that we ate a lot of barbecue, and everyone was so happy.",
         },
     ];
 </script>
@@ -78,12 +34,12 @@
     >
         <div class="flex flex-col gap-2">
             <p class="opacity-60 text-base sm:text-lg md:text-xl text-center">
-                Don't just take our word for it
+                DLC in my youth in China
             </p>
             <h3
                 class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center"
             >
-                See What <span class="text-indigo-400">Others</span> Have To Say
+                See My <span class="text-indigo-400">Stories</span> In University
             </h3>
         </div>
         <div class="flex flex-col md:flex-row gap-8 w-fit mx-auto">
@@ -104,9 +60,8 @@
         </button>
         <div class="flex flex-col gap-10">
             <p class="mx-auto text-lg sm:text-xl md:text-2xl font-semibold">
-                Trusted by 1,349 Swoldiers
+                I arrived in Canada on 2024-June-14
             </p>
-            <Stars />
         </div>
     </div>
 </SectionWrapper>

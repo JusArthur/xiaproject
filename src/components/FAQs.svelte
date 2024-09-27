@@ -2,46 +2,33 @@
     import SectionWrapper from "./SectionWrapper.svelte";
     let faqs = [
         {
-            question: "What is Swoley Moley?",
-            ans: "Swoley Moley is a fun fitness app designed to make your workouts enjoyable by incorporating interactive games and challenges.",
+            question: "What is my plan for career?",
+            ans: "I can not give a certain answer for the uncertain future. But I can be sure that I will dedicate all I have to programming. And try my best to contribute to Ori.Gatou",
         },
         {
-            question: "How do I download Swoley Moley?",
-            ans: "You can download Swoley Moley from the App Store (for iOS) or Google Play Store (for Android) on your mobile device.",
+            question: "What passion is used to?",
+            ans: "The reason that a lot of people learn CS is just to 'sell' themselves to big company. How I live each day is how I live my life. \
+            The real question is whether I see myself as a commodity, exchanging labor for compensation, or as someone who is constantly learning, striving for personal growth and self-fulfillment. That is what truly matters.",
         },
         {
-            question: "Is Swoley Moley free to use?",
-            ans: "Yes, Swoley Moley offers a free version with basic features. There is also a premium subscription that unlocks additional games and advanced workout tracking.",
+            question: "Impression to Ori.Gatou",
+            ans: "Impressive! I have met Diogo, Dai, Zizhang, Jian and Benjamin! So many nice guys in this company! In communication strategy class, teacher told me a good working environment will boost my confidence and help me engage more in teamwork.\
+             I am really looking forward to this new journey and the challenges ahead.",
         },
         {
-            question: "What types of workouts does Swoley Moley offer?",
-            ans: "Swoley Moley offers a variety of workouts, including cardio, strength training, and flexibility exercises. The workouts are designed to be engaging and entertaining.",
+            question: "Talk about self-discipline?",
+            ans: "In my first year of university, it was as if a tightly wound spring had suddenly been released. I stayed up late playing games, skipped classes, and pretty much did everything a typical 'bad boy' would do. \
+            It wasn't until my sophomore year, when my grades fell below the top 50%, that I began to discipline myself.\
+             Now, I go to bed at 10 PM and wake up at 5:30 AM. After studying for an hour, I attend my 8 AM classes.\
+              I firmly believe that early morning work is far more effective than staying up late.\
+               By the end of my sophomore year, I ranked in the top 10% of the entire university.",
         },
         {
-            question: "Can I connect Swoley Moley to my fitness tracker?",
-            ans: "Yes, Swoley Moley supports integration with popular fitness trackers, allowing you to sync your workout data and track your progress seamlessly.",
+            question: "Others?",
+            ans: "I really love the line from the movie Pegasus: 'The true skill is giving your all to everything you love.' It is not about seeking a result,\
+            it's more about the process of getting to that result. It's the journey and the approach with all endeavors.",
         },
-        {
-            question: "Are there multiplayer features in Swoley Moley?",
-            ans: "Yes, Swoley Moley includes multiplayer challenges, allowing you to compete with friends or join group workouts for a more interactive and social experience.",
-        },
-        {
-            question: "How does Swoley Moley motivate users to stay active?",
-            ans: "Swoley Moley employs a reward system, where users earn points and achievements for completing workouts. These rewards can be used to unlock new levels, challenges, and in-app content.",
-        },
-        {
-            question: "Can I customize my workouts in Swoley Moley?",
-            ans: "Absolutely! Swoley Moley allows users to customize their workouts based on personal preferences, fitness goals, and available equipment.",
-        },
-        {
-            question: "Is there a beginner-friendly mode in Swoley Moley?",
-            ans: "Yes, Swoley Moley offers a beginner-friendly mode with easier exercises and lower intensity workouts, making it suitable for users at various fitness levels.",
-        },
-        {
-            question:
-                "How often should I use Swoley Moley for optimal results?",
-            ans: "The frequency of Swoley Moley workouts depends on your fitness goals. It is recommended to engage in at least 3-5 sessions per week for noticeable results.",
-        },
+
     ];
 </script>
 
@@ -51,12 +38,12 @@
     >
         <div class="flex flex-col gap-2">
             <p class="opacity-60 text-base sm:text-lg md:text-xl text-center">
-                For all your questions, qualms & queries
+                I have a lot of ideas and thoughts
             </p>
             <h3
                 class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center"
             >
-                Frequently Asked Questions
+                Here are my answers for future
             </h3>
         </div>
         <div class="flex flex-col gap-8 sm:gap-10 md:gap-14 w-full">

@@ -4,22 +4,23 @@
     >
         <div class="flex flex-col gap-4 md:col-span-2">
             <h1 class="font-semibold">
-                Swoley <span class="text-indigo-400">Moley</span>
+                Qinglan's <span class="text-indigo-400">Story</span>
             </h1>
-            <p>©2023 SWOLEY MOLEY LTD. All rights reserved.</p>
+            <p>©2024 Qinglan. All rights reserved.</p>
         </div>
         <div class="flex flex-col gap-4">
-            <p class="font-bold poppins text-base sm:text-lg">Support</p>
+            <p class="font-bold poppins text-base sm:text-lg">Contact Me</p>
             <a
                 href=""
                 target="_blank"
                 class="cursor-pointer hover:text-indigo-400 duration-200"
+                on:click={() => alert('justinxmay@gmail.com')}
             >
-                Contact Us</a
+                Click to see</a
             >
         </div>
         <div class="flex flex-col gap-4">
-            <p class="font-bold poppins text-base sm:text-lg">Research</p>
+            <p class="font-bold poppins text-base sm:text-lg">My Research</p>
             <a
                 href=""
                 target="_blank"
@@ -29,7 +30,7 @@
             >
         </div>
         <div class="flex flex-col gap-4">
-            <p class="font-bold poppins text-base sm:text-lg">Follow Us</p>
+            <p class="font-bold poppins text-base sm:text-lg">Social Media</p>
             <a
                 href=""
                 target="_blank"

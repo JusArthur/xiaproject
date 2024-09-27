@@ -1,76 +1,74 @@
 <script>
     import ProductCard from "./ProductCard.svelte";
     import SectionWrapper from "./SectionWrapper.svelte";
-    let productFeatures = [
+    let preludeFeatures = [
         {
-            featureList: [
-                "Daily streak counter",
-                "Weights and reps tracker",
-                "Community challenges",
-                "Every workout is new and exciting",
+            me: [
+                "2018-May-30",
+                "Daydreamer",
+                "Homework doer",
+                "Still remember the dreams of childhood?",
             ],
             description:
-                "Swoley moley ensures all users have the information they need to train safely and train effectively.",
-            imgUrl: "assets/selection.png",
+                "In 2018, I had just finished building my first 'matchbox' house in Minecraft. \
+                I couldn’t help but wonder, One day, I want to create games as fun as this. But my mother said, 'You must focus on your studies \
+                so that you can get into the best medical school in the future.'",
+            imgUrl: "assets/MineCraft.png",
         },
         {
-            featureList: [
-                "Select your preferences",
-                "Personalize your workouts",
-                "Customize your training",
-                "Guarantees progress on all core exercises",
+            me: [
+                "2022-June-08, ending",
+                "English or Computer Science?",
+                "The first eighteen years of life feel like a dream",
+                "Life is dear, love is dearer. Both can be given up for freedom.",
             ],
             description:
-                "Build you streaks and see your progress with our amazing tracking and analytics features.",
-            imgUrl: "assets/training.png",
+                "In 2022, I was finally freed from the shackles of high school and the gaokao, \
+                only to face the next hurdle—choosing a university and my future path. \
+                In China, this moment felt monumental, as if the successes and failures of my six years in middle and high school hinged on this very decision. \
+                I wanted to pursue a degree in Computer Science, but my mother said, At the very least, you should become an English teacher at a public school.",
+            imgUrl: "assets/Gaokao.jpg",
         },
         {
-            featureList: [
-                "Eliminating guesswork",
-                "Save time",
-                "Achieve the performance you seek",
-                "Builds functional strength",
+            me: [
+                "2024-June-14",
+                "Wukong within my heart",
+                "Flight to Canada",
+                "'I am CR7, always love challenges'",
             ],
             description:
-                "Enter as much information about yourself as you desire to ensure all workouts are personalized to your every need.",
-            imgUrl: "assets/goal.png",
+                "Wukong embodies the classic image of a rebel. He defies the authority of the Heavenly Court, crowns himself the 'Great Sage Equal to Heaven,' and storms the Emperor's palace.",
+            imgUrl: "assets/BMW.jpg",
         },
     ];
 </script>
 
-<SectionWrapper id="product">
+<SectionWrapper id="prelude">
     <div
         class="flex flex-col gap-10 sm:gap-14 md:gap-24 flex-1 items-center justify-center pb-10 md:pb-14"
     >
         <div class="flex flex-col gap-2">
             <p class="opacity-60 text-base sm:text-lg md:text-xl text-center">
-                Start your lifetime <span class="text-indigo-400"
-                    >gym streak</span
-                > today
+                Beginning of <span class="text-indigo-400">my journey</span> starts here
             </p>
             <h3
                 class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center"
             >
-                Features For Everyone
+                A Child's Dream
             </h3>
         </div>
 
-        {#each productFeatures as productFeature, index}
-            <ProductCard {productFeature} {index}>
+        {#each preludeFeatures as preludeFeature, index}
+            <ProductCard {preludeFeature} {index}>
                 {#if index === 0}
-                    Experience a beginner exercise <span
-                        class="text-indigo-400 font-medium">master</span
-                    > class
+                    "I want to make games!" A 14-year-old child told his mom <span
+                        class="text-indigo-400 font-medium">proudly</span>
                 {:else if index === 1}
-                    Lay the foundations for <span
-                        class="text-indigo-400 font-medium">routine</span
-                    > and consistency
+                    'Don’t apply for CS majors! That’s not for <span
+                        class="text-indigo-400 font-medium">you!</span>' Mom angrily said like this.
                 {:else}
-                    Workouts specific to your <span
-                        class="text-indigo-400 font-medium">environment</span
-                    >
-                    and
-                    <span class="text-indigo-400 font-medium">expertise</span>
+                    The Rebellion of Wukong — <span
+                        class="text-indigo-400 font-medium">Havoc in Heaven</span>
                 {/if}
             </ProductCard>
         {/each}

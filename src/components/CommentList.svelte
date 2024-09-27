@@ -1,77 +1,96 @@
 <script>
-    import '../app.css';
-    import { onMount } from "svelte";
-
-    let comments = [];
+    import { supabase } from "./supabase.js";
+    import { fade, slide } from "svelte/transition"; // import transition effect
     let newComment = "";
-    let user = "Anonymous";
+    let username = "";
+    let comments = [];
 
-    const fetchComments = async () => {
-        try {
-            const res = await fetch("/comments");
-            const data = await res.json();
-            comments = data;
-        } catch (err) {
-            console.error("Error fetching comments:", err);
-        }
-    };
-
+    // Submit comments to supabase
     const submitComment = async () => {
-        if (newComment.trim() === "") return;
+        if (newComment.trim() && username.trim()) {
+            const { data, error } = await supabase.from("comments").insert([
+                {
+                    user: username,
+                    comments: newComment,
+                    created_at: new Date(),
+                },
+            ]);
 
-        const response = await fetch("/comments", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                user: user,
-                content: newComment,
-            }),
-        });
-
-        if (response.ok) {
-            newComment = ""; // 清空输入框
-            fetchComments(); // 刷新评论列表
+            if (error) {
+                console.log("Error:", error.message);
+            } else {
+                newComment = "";
+                username = "";
+                fetchComments(); // Re-comment after successfully comment
+            }
         }
     };
 
-    onMount(() => {
-        fetchComments();
-    });
+    // Fetchcomments from supabase
+    const fetchComments = async () => {
+        const { data, error } = await supabase
+            .from("comments")
+            .select("*")
+            .order("created_at", { ascending: false });
+
+        if (error) {
+            console.log("Error:", error.message);
+        } else {
+            comments = data;
+        }
+    };
+
+    // To make time pretty
+    const formatDate = (timestamp) => {
+        const date = new Date(timestamp);
+        return date.toLocaleString();
+    };
+
+    // Load new comments
+    fetchComments();
 </script>
 
-<!-- 样式更改后的评论输入表单和评论列表 -->
-<div class="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-100">
-    <!-- 页面标题 -->
-    <h3 class="text-3xl font-semibold mb-6 text-gray-800">Comments</h3>
 
-    <!-- 评论输入表单 -->
-    <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-6 mb-8">
-        <textarea
-            class="w-full h-20 p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter your comment"
+<div class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
+    <h1 class="text-2xl font-bold mb-4 text-gray-800 text-left">Comments Section</h1>
+    
+    <!-- input & submit -->
+    <div class="mb-6">
+        <input
+            bind:value={username}
+            class="w-full px-4 py-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="Enter your username..."
+        />
+        <input
             bind:value={newComment}
-        ></textarea>
+            class="w-full px-4 py-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="Enter your comment..."
+        />
         <button
-            class="w-full bg-blue-500 text-white p-3 rounded-lg shadow-lg hover:bg-blue-600 transition-all"
             on:click={submitComment}
+            class="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 transition duration-200"
         >
-            Submit Comment
+            Submit
         </button>
     </div>
 
-    <!-- 评论列表展示 -->
-    {#if comments.length === 0}
-        <p class="text-gray-600 text-center">No comments yet</p>
-    {/if}
-
-    {#each comments as comment}
-        <div class="w-full max-w-lg bg-white shadow-md rounded-lg p-4 m-4">
-            <p class="text-lg font-semibold text-gray-800">{comment.user}</p>
-            <p class="text-gray-700 mt-2">{comment.content}</p>
-            <small class="block text-gray-500 mt-4">{new Date(comment.created_at).toLocaleString()}</small>
-        </div>
-    {/each}
+    <!-- to show the comments -->
+    <ul class="space-y-4">
+        {#each comments as comment (comment.id)}
+            <li class="flex bg-gray-100 p-4 rounded-md shadow" in:slide={{ duration: 500 }}>
+                <!-- profile pic of users -->
+                <div class="flex-shrink-0 mr-4">
+                    <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/150" alt="User avatar">
+                </div>
+                <!-- comments here -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-lg font-semibold text-gray-700">{comment.user}</span>
+                        <span class="text-sm text-gray-500">{formatDate(comment.created_at)}</span>
+                    </div>
+                    <p class="text-gray-600">{comment.comments}</p>
+                </div>
+            </li>
+        {/each}
+    </ul>
 </div>
-

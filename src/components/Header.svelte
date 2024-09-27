@@ -8,7 +8,7 @@
     >
         <a href="/">
             <h1 class="font-semibold">
-                Swoley <span class="text-indigo-400">Moley</span>
+                Qinglan's <span class="text-indigo-400">Story</span>
             </h1>
         </a>
         <button
@@ -19,22 +19,22 @@
         </button>
         <nav class="hidden md:flex items-center gap-4 lg:gap-6">
             <a
-                href="#product"
+                href="#prelude"
                 class="duration-200 hover:text-indigo-400 cursor-pointer"
-                >Product</a
+                >Prelude</a
             >
             <a
                 href="#reviews"
                 class="duration-200 hover:text-indigo-400 cursor-pointer"
-                >Reviews</a
+                >Chapters</a
             >
             <a
                 href="#faqs"
                 class="duration-200 hover:text-indigo-400 cursor-pointer"
-                >FAQs</a
+                >Plans</a
             >
             <button class="specialBtn">
-                <p>Start free today</p>
+                <p>Start Again?</p>
             </button>
         </nav>
     </div>
