@@ -21,7 +21,7 @@
     >
         <div class="flex items-center justify-between gap-4 border-b pb-2">
             <h1 class="font-semibold">
-                Swoley <span class="text-indigo-400">Moley</span>
+                Qinglan's <span class="text-indigo-400">Story</span>
             </h1>
             <button
                 on:click={() => ($openModal = false)}
@@ -32,13 +32,13 @@
         </div>
         <div class="flex flex-col gap-4 flex-1">
             <button
-                on:click={() => reroute("#product")}
+                on:click={() => reroute("#prelude")}
                 class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
             >
                 <p
                     class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold"
                 >
-                    Product <i class="fa-solid fa-chevron-right text-xl pl-4" />
+                    Prelude <i class="fa-solid fa-chevron-right text-xl pl-4" />
                 </p>
             </button>
             <button
@@ -48,7 +48,7 @@
                 <p
                     class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold"
                 >
-                    Reviews <i class="fa-solid fa-chevron-right text-xl pl-4" />
+                    Chapters <i class="fa-solid fa-chevron-right text-xl pl-4" />
                 </p>
             </button>
             <button
@@ -58,7 +58,7 @@
                 <p
                     class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold"
                 >
-                    FAQs <i class="fa-solid fa-chevron-right text-xl pl-4" />
+                    Plans <i class="fa-solid fa-chevron-right text-xl pl-4" />
                 </p>
             </button>
         </div>
